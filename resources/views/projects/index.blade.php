@@ -7,7 +7,7 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <h5 class="card-title">{{$project->nome}}</h5>
-                        <p class="card-text">{{$project->periodo}}</p>
+                        <p class="card-text"><i>{{$project->periodo}}</i></p>
                     </div>
                     <p class="card-text">{{$project->cliente}}</p>
                     <a href="{{ route('projects.show', $project)}}" class="btn btn-dark">More</a>
