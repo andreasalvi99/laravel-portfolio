@@ -10,7 +10,7 @@
                         <p class="card-text">{{$project->periodo}}</p>
                     </div>
                     <p class="card-text">{{$project->cliente}}</p>
-                    <a href="#" class="btn btn-primary">Button</a>
+                    <a href="{{ route('projects.show', $project)}}" class="btn btn-primary">More</a>
                 </div>
             </div>
         @endforeach
