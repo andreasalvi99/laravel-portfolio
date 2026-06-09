@@ -2,6 +2,9 @@
 {{-- @dd($projects) --}}
 @section('content')
     <div class="container mt-5">
+        <a href="{{route('projects.create')}}">
+            <button class="btn btn-primary my-3">Nuovo progetto</button>
+        </a>
         @foreach ($projects as $project )
             <div class="card border-dark mb-3">
                 <div class="card-body">
