@@ -21,11 +21,6 @@
                 <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Elimina
                 </button>
-                {{-- <form action="{{route('projects.destroy', $project->id)}}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <input class="btn btn-danger btn-sm" type="submit" value="Elimina">
-               </form> --}}
             </div>
         </div>
     </div>
