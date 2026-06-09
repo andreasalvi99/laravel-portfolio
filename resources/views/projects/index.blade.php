@@ -12,7 +12,12 @@
                         <h5 class="card-title">{{$project->nome}}</h5>
                         <p class="card-text"><i>{{$project->periodo}}</i></p>
                     </div>
-                    <p class="card-text">{{$project->cliente}}</p>
+                    <div class="d-flex justify-content-between">
+                        <p class="card-text">{{$project->cliente}}</p>
+                        <a href="{{route('projects.edit', $project->id)}}">
+                            <button class="btn btn-warning btn-sm">Modifica</button>
+                        </a>
+                    </div>
                     <a href="{{ route('projects.show', $project)}}" class="btn btn-dark">More</a>
                 </div>
             </div>
