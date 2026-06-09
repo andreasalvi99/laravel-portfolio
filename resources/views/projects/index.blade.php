@@ -14,9 +14,16 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         <p class="card-text">{{$project->cliente}}</p>
-                        <a href="{{route('projects.edit', $project->id)}}">
+                        <div class="d-flex flex-column gap-1">
+                            <a href="{{route('projects.edit', $project->id)}}">
                             <button class="btn btn-warning btn-sm">Modifica</button>
-                        </a>
+                            </a>
+                            <form action="{{route('projects.destroy', $project->id)}}", method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input class="btn btn-danger btn-sm" type="submit" value="Elimina">
+                           </form>
+                        </div>
                     </div>
                     <a href="{{ route('projects.show', $project)}}" class="btn btn-dark">More</a>
                 </div>
