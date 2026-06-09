@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="container form-control">
-        <form action="">
+        <form action="{{route('projects.store')}}" method="POST">
+            @csrf
             <div class="my-3">
                 <label for="nome" class="form-label">Nome progetto</label>
                 <input type="text" name="nome" id="nome" class="form-control">
@@ -17,10 +18,10 @@
             </div>
             <div class="my-3">
                 <label for="riassunto" class="form-label">Riassunto</label>
-                <input type="text" name="riassunto" id="riassunto" class="form-control">
+                <textarea name="riassunto" id="riassunto" class="form-control" rows="5"></textarea>
             </div>
     
-            <button class="btn btn-outline-success">Invia</button>
+            <button class="btn btn-outline-success" type="submit">Invia</button>
         </form>
     </div>
 @endsection

@@ -29,9 +29,20 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Project $project)
     {
-        //
+        $data = $request->all();
+
+        $newProject = new Project();
+
+        $newProject->nome = $data['nome'];
+        $newProject->cliente = $data['cliente'];
+        $newProject->periodo = $data['periodo'];
+        $newProject->riassunto = $data['riassunto'];
+
+        $newProject->save();
+
+        return redirect()->route('projects.show', $newProject->id);
     }
 
     /**
