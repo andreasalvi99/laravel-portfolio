@@ -2,23 +2,26 @@
 
 @section('content')
     <div class="container form-control">
-        <form action="{{route('projects.store')}}" method="POST">
+        <form action="{{route('projects.update', $project->id)}}" method="POST">
             @csrf
+            @method('PUT')
             <div class="my-3">
                 <label for="nome" class="form-label">Nome progetto</label>
-                <input type="text" name="nome" id="nome" class="form-control">
+                <input type="text" name="nome" id="nome" class="form-control" value="{{$project->nome}}">
             </div>
             <div class="my-3">
                 <label for="cliente" class="form-label">Cliente</label>
-                <input type="text" name="cliente" id="cliente" class="form-control">
+                <input type="text" name="cliente" id="cliente" class="form-control"
+                value="{{$project->cliente}}">
             </div>
             <div class="my-3">
                 <label for="periodo" class="form-label">Periodo</label>
-                <input type="text" name="periodo" id="periodo" class="form-control">
+                <input type="text" name="periodo" id="periodo" class="form-control"
+                value="{{$project->periodo}}">
             </div>
             <div class="my-3">
                 <label for="riassunto" class="form-label">Riassunto</label>
-                <textarea name="riassunto" id="riassunto" class="form-control" rows="5"></textarea>
+                <textarea name="riassunto" id="riassunto" class="form-control" rows="5">{{$project->riassunto}}</textarea>
             </div>
     
             <button class="btn btn-outline-success" type="submit">Invia</button>
