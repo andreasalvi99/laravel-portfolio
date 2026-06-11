@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-5">
         <a href="{{route('projects.create')}}">
-            <button class="btn btn-primary my-3">Nuovo progetto</button>
+            <button class="btn btn-outline-primary my-3"><i class="bi bi-plus-lg"></i></button>
         </a>
         @foreach ($projects as $project )
             <div class="card border-dark mb-3">
@@ -16,16 +16,18 @@
                         <p class="card-text">{{$project->cliente}}
                        <span class="d-block">{{$project->type->nome}}</span> 
                         </p>
-                        <div class="d-flex flex-column gap-1">
+                        <div class="d-flex flex-column gap-2">
                             <a href="{{route('projects.edit', $project->id)}}">
-                            <button class="btn btn-warning btn-sm">Modifica</button>
+                                <button class="btn btn-outline-warning btn-sm">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </button>
                             </a>
-                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Elimina
+                            <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <i class="bi bi-trash3-fill"></i>
                             </button>
                         </div>
                     </div>
-                    <a href="{{ route('projects.show', $project)}}" class="btn btn-dark">More</a>
+                    <a href="{{ route('projects.show', $project)}}" class="btn btn-outline-dark">More</a>
                 </div>
             </div>
         @endforeach

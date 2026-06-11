@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-5">
         <a href="{{route('types.create')}}">
-            <button class="btn btn-primary my-3">Nuovo</button>
+            <button class="btn btn-outline-primary my-3"><i class="bi bi-plus-lg"></i></button>
         </a>
         @foreach ($types as $type)
             <div class="card my-3">
@@ -18,10 +18,10 @@
                         <p class="mb-1 align-self-center">{{$type->descrizione}}</p>
                         <div class="d-flex flex-column gap-1">
                             <a href="{{route('types.edit', $type->id)}}">
-                                <button class="btn btn-outline-warning btn-sm">Modifica</button>
+                                <button class="btn btn-outline-warning btn-sm"><i class="bi bi-pencil-fill"></i></button>
                             </a>
                             <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Elimina
+                                <i class="bi bi-trash3-fill"></i>
                             </button>
                         </div>
                     </div>
