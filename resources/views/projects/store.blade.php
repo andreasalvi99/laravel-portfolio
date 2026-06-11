@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container form-control">
+    <div class="container form-control mt-5">
         <form action="{{route('projects.store')}}" method="POST">
             @csrf
             <div class="my-3">

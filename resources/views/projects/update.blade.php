@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container form-control">
+    <div class="container form-control mt-5">
         <form action="{{route('projects.update', $project->id)}}" method="POST">
             @csrf
             @method('PUT')
