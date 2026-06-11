@@ -4,6 +4,7 @@
     <div class="container mt-5">
         <div class="card border-dark mb-3">
             <div class="card-header d-flex justify-content-between"><i>{{$project->periodo}}</i>
+            {{$project->type->nome}}
             </div>
             <div class="card-body">
                 <div class="d-flex justify-content-between">
