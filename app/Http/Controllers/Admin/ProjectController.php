@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Http\Request;
+use TypeError;
 
 class ProjectController extends Controller
 {
@@ -23,7 +25,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projects.store');
+        $types = Type::all();
+
+        return view('projects.store', compact('types'));
     }
 
     /**
@@ -37,6 +41,7 @@ class ProjectController extends Controller
 
         $newProject->nome = $data['nome'];
         $newProject->cliente = $data['cliente'];
+        $newProject->type_id = $data['type_id'];
         $newProject->periodo = $data['periodo'];
         $newProject->riassunto = $data['riassunto'];
 

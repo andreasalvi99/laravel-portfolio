@@ -17,6 +17,16 @@
                 <input type="text" name="periodo" id="periodo" class="form-control">
             </div>
             <div class="my-3">
+                <label for="type_id" class="form-label">Categoria</label>
+                <select name="type_id" id="type_id" class="form-control">
+                    @foreach ($types as $type)
+                        <option value="{{$type->id}}">
+                            {{$type->nome}}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="my-3">
                 <label for="riassunto" class="form-label">Riassunto</label>
                 <textarea name="riassunto" id="riassunto" class="form-control" rows="5"></textarea>
             </div>
