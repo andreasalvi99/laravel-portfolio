@@ -14,7 +14,7 @@
                     <div class="d-flex justify-content-between">
                         <p class="mb-1 align-self-center">{{$type->descrizione}}</p>
                         <div class="d-flex flex-column gap-1">
-                            <a href="#">
+                            <a href="{{route('types.edit', $type->id)}}">
                                 <button class="btn btn-outline-warning btn-sm">Modifica</button>
                             </a>
                             <a href="#">
