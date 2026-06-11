@@ -1,5 +1,5 @@
 @extends('layouts.app')
-{{-- @dd($types) --}}
+
 @section('content')
     <div class="container mt-5">
         <a href="{{route('projects.create')}}">
