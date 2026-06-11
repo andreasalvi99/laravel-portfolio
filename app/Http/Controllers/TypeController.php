@@ -22,7 +22,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('types.create');
     }
 
     /**
@@ -30,7 +30,16 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $newType = new Type();
+
+        $newType->nome = $data['nome'];
+        $newType->descrizione = $data['descrizione'];
+
+        $newType->save();
+
+        return redirect()->route('types.index');
     }
 
     /**
@@ -67,8 +76,10 @@ class TypeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Type $type)
     {
-        //
+        $type->delete();
+
+        return redirect()->route('types.index');
     }
 }
