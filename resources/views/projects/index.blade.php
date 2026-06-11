@@ -1,5 +1,5 @@
 @extends('layouts.app')
-{{-- @dd($projects) --}}
+{{-- @dd($types) --}}
 @section('content')
     <div class="container mt-5">
         <a href="{{route('projects.create')}}">
@@ -13,7 +13,9 @@
                         <p class="card-text"><i>{{$project->periodo}}</i></p>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <p class="card-text">{{$project->cliente}}</p>
+                        <p class="card-text">{{$project->cliente}}
+                       <span class="d-block">{{$project->type->nome}}</span> 
+                        </p>
                         <div class="d-flex flex-column gap-1">
                             <a href="{{route('projects.edit', $project->id)}}">
                             <button class="btn btn-warning btn-sm">Modifica</button>
