@@ -15,7 +15,9 @@
                     <div class="d-flex justify-content-between">
                         <p class="card-text">{{$project->cliente}}
                             @if ($project->type)
-                                <span class="d-block">{{$project->type->nome}}</span> 
+                                <span class="d-block">{{$project->type->nome}}</span>    
+                            @else
+                                <span class="d-block">-</span>
                             @endif
                         </p>
                         <div class="d-flex flex-column gap-2">
