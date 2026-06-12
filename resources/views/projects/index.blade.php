@@ -14,7 +14,9 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         <p class="card-text">{{$project->cliente}}
-                       <span class="d-block">{{$project->type->nome}}</span> 
+                            @if ($project->type)
+                                <span class="d-block">{{$project->type->nome}}</span> 
+                            @endif
                         </p>
                         <div class="d-flex flex-column gap-2">
                             <a href="{{route('projects.edit', $project->id)}}">
