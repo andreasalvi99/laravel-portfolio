@@ -5,36 +5,40 @@
         <a href="{{route('projects.create')}}">
             <button class="btn btn-outline-primary my-3"><i class="bi bi-plus-lg"></i></button>
         </a>
-        @foreach ($projects as $project )
-            <div class="card border-dark mb-3">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="card-title">{{$project->nome}}</h5>
-                        <p class="card-text"><i>{{$project->periodo}}</i></p>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <p class="card-text">{{$project->cliente}}
-                            @if ($project->type)
-                                <span class="d-block">{{$project->type->nome}}</span>    
-                            @else
-                                <span class="d-block">-</span>
-                            @endif
-                        </p>
-                        <div class="d-flex flex-column gap-2">
-                            <a href="{{route('projects.edit', $project->id)}}">
-                                <button class="btn btn-outline-warning btn-sm">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </button>
-                            </a>
-                            <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <i class="bi bi-trash3-fill"></i>
-                            </button>
+        <div class="row row-cols-3">
+            @foreach ($projects as $project )
+                <div class="col">
+                    <div class="card border-dark mb-3 h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title">{{$project->nome}}</h5>
+                                <p class="card-text"><i>{{$project->periodo}}</i></p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p class="card-text">{{$project->cliente}}
+                                    @if ($project->type)
+                                        <span class="d-block">{{$project->type->nome}}</span>    
+                                    @else
+                                        <span class="d-block">-</span>
+                                    @endif
+                                </p>
+                                <div class="d-flex flex-column gap-2">
+                                    <a href="{{route('projects.edit', $project->id)}}">
+                                        <button class="btn btn-outline-warning btn-sm">
+                                            <i class="bi bi-pencil-fill"></i>
+                                        </button>
+                                    </a>
+                                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <i class="bi bi-trash3-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <a href="{{ route('projects.show', $project)}}" class="btn btn-outline-dark">More</a>
                         </div>
                     </div>
-                    <a href="{{ route('projects.show', $project)}}" class="btn btn-outline-dark">More</a>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
     </div>
 
     {{-- ^ Modale ^ --}}
