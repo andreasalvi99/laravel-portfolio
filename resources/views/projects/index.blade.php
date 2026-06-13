@@ -5,7 +5,7 @@
         <a href="{{route('projects.create')}}">
             <button class="btn btn-outline-primary my-3"><i class="bi bi-plus-lg"></i></button>
         </a>
-        <div class="row row-cols-3">
+        <div class="row row-cols-3 g-3">
             @foreach ($projects as $project )
                 <div class="col">
                     <div class="card border-dark mb-3 h-100">

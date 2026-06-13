@@ -8,7 +8,12 @@
             </div>
             <div class="card-body">
                 <div class="d-flex justify-content-between">
-                    <h5 class="card-title">{{$project->nome}}</h5>
+                    <div>
+                        <h4 class="card-title d-inline-block me-2">{{$project->nome}}</h4>
+                        @foreach ($project->technologies as $technology)
+                            <span class="badge rounded-pill" style="background-color: {{$technology->colore}}">{{$technology->nome}}</span>
+                        @endforeach
+                    </div>
                     <small class="card-title">{{$project->cliente}}</small>
                 </div>
                 <p class="card-text">{{$project->riassunto}}</p>

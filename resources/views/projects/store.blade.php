@@ -27,6 +27,16 @@
                 </select>
             </div>
             <div class="my-3">
+                <label for="type_id" class="form-label d-block">Tecnologie</label>
+                    @foreach ($technologies as $technology)
+                    <input class="form-check-input" type="checkbox" id="{{$technology->id}}" name="technologies[]" value="{{$technology->id}}">
+                    <label class="form-check-label" for="checkDefault">
+                    {{$technology->nome}}
+                    </label>
+                    @endforeach
+                </select>
+            </div>
+            <div class="my-3">
                 <label for="riassunto" class="form-label">Riassunto</label>
                 <textarea name="riassunto" id="riassunto" class="form-control" rows="5"></textarea>
             </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use TypeError;
@@ -26,8 +27,9 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
+        $technologies = Technology::all();
 
-        return view('projects.store', compact('types'));
+        return view('projects.store', compact('types', 'technologies'));
     }
 
     /**
@@ -46,6 +48,10 @@ class ProjectController extends Controller
         $newProject->riassunto = $data['riassunto'];
 
         $newProject->save();
+
+        if($request->has('technologies')) {
+            $newProject->technologies()->attach($data['technologies']);
+        }
 
         return redirect()->route('projects.show', $newProject->id);
     }
