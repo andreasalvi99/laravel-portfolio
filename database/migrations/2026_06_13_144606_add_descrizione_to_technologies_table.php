@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('project_technology', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('project_id')->nullable()->constrained()->nullOnDelete();
-            $table->foreignId('technology_id')->nullable()->constrained()->nullOnDelete();
-            $table->timestamps();
+        Schema::table('technologies', function (Blueprint $table) {
+            $table->text('descrizione')->nullable()->after('nome');
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('project_technology');
+        Schema::table('technologies', function (Blueprint $table) {
+            $table->dropColumn('descrizione');
+        });
     }
 };
