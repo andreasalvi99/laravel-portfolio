@@ -13,17 +13,9 @@
                             <small>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="badge rounded-pill" style="background-color: {{$technology->colore}}">{{$technology->nome}}</span>
-                                    <button type="button" class="btn btn-outline dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    <button type="button" class="btn p-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                         <i class="bi bi-trash3-fill" style="color: {{$technology->colore}}"></i>
                                     </button>
-
-                                    {{-- <form action="{{route('technologies.destroy', $technology->id)}}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-outline-dark" type="submit">
-                                            <i class="bi bi-trash3-fill" style="color: {{$technology->colore}}"></i>
-                                        </button>
-                                    </form> --}}
                                 </div>
                                 
                             </small>
