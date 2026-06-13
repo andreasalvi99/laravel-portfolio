@@ -5,13 +5,21 @@
         <a href="{{route('projects.create')}}">
             <button class="btn btn-outline-primary my-3"><i class="bi bi-plus-lg"></i></button>
         </a>
-        <div class="row row-cols-3 g-3">
-            @foreach ($projects as $project )
+        <div class="row row-cols-2 g-3">
+            @foreach ($projects as $project)
                 <div class="col">
                     <div class="card border-dark mb-3 h-100">
                         <div class="card-body">
                             <div class="d-flex justify-content-between mb-2">
-                                <h5 class="card-title">{{$project->nome}}</h5>
+                                <div>
+                                    <h4 class="card-title d-inline block me-2">{{$project->nome}}</h4>
+                                    <small>
+                                        @forelse ($project->technologies as $technology)
+                                            <span class="badge rounded-pill" style="background-color: {{$technology->colore}}">{{$technology->nome}}</span>
+                                        @empty
+                                        @endforelse
+                                    </small>
+                                </div>
                                 <p class="card-text"><i>{{$project->periodo}}</i></p>
                             </div>
                             <div class="d-flex justify-content-between">
