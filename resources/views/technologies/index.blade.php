@@ -11,7 +11,13 @@
                     <div class="card border mb-3 h-100">
                         <div class="card-header">
                             <small>
-                                <span class="badge rounded-pill" style="background-color: {{$technology->colore}}">{{$technology->nome}}</span>
+                                <div class="d-flex justify-content-between">
+                                    <span class="badge rounded-pill" style="background-color: {{$technology->colore}}">{{$technology->nome}}</span>
+                                    <a href="{{route('technologies.edit', $technology->id)}}">
+                                        <i class="bi bi-pencil-fill" style="color: {{$technology->colore}}"></i>
+                                    </a>
+                                </div>
+                                
                             </small>
                         </div>
                         <div class="card-body" style="color: {{$technology->colore}}">
