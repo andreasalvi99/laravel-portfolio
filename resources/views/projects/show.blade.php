@@ -10,9 +10,13 @@
                 <div class="d-flex justify-content-between">
                     <div>
                         <h4 class="card-title d-inline-block me-2">{{$project->nome}}</h4>
-                        @foreach ($project->technologies as $technology)
+                        <small>
+                        @forelse($project->technologies as $technology)
                             <span class="badge rounded-pill" style="background-color: {{$technology->colore}}">{{$technology->nome}}</span>
-                        @endforeach
+                        @empty
+                        -
+                        @endforelse
+                        </small>
                     </div>
                     <small class="card-title">{{$project->cliente}}</small>
                 </div>
