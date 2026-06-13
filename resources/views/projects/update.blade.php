@@ -32,10 +32,12 @@
             <div class="my-3">
                 <label for="type_id" class="form-label d-block">Tecnologie</label>
                     @foreach ($technologies as $technology)
-                    <input class="form-check-input" type="checkbox" id="technology-{{$technology->id}}" name="technologies[]" value="{{$technology->id}}" {{$project->technologies->contains($technology->id) ? 'checked' : ''}}>
-                    <label class="form-check-label" for="technology-{{$technology->id}}">
-                    {{$technology->nome}}
-                    </label>
+                    <div class="d-inline-block me-3">
+                        <input class="form-check-input" type="checkbox" id="technology-{{$technology->id}}" name="technologies[]" value="{{$technology->id}}" {{$project->technologies->contains($technology->id) ? 'checked' : ''}}>
+                        <label class="form-check-label" for="technology-{{$technology->id}}">
+                        {{$technology->nome}}
+                        </label>
+                    </div>
                     @endforeach
                 </select>
             </div>
