@@ -10,9 +10,9 @@
                 <div class="col">
                     <div class="card border-dark mb-3 h-100">
                         <div class="card-body">
-                            <div class="d-flex justify-content-between mb-2">
-                                <div>
-                                    <h4 class="card-title d-inline block me-2">{{$project->nome}}</h4>
+                            <div class="d-flex justify-content-between mb-2 align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <h4 class="card-title d-inline block me-2 mb-0">{{$project->nome}}</h4>
                                     <small>
                                         @forelse ($project->technologies as $technology)
                                             <span class="badge rounded-pill" style="background-color: {{$technology->colore}}">{{$technology->nome}}</span>

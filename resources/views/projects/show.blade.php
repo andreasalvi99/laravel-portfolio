@@ -8,8 +8,8 @@
             </div>
             <div class="card-body">
                 <div class="d-flex justify-content-between">
-                    <div>
-                        <h4 class="card-title d-inline-block me-2">{{$project->nome}}</h4>
+                    <div class="d-flex align-items-center">
+                        <h4 class="card-title d-inline-block me-2 mb-0">{{$project->nome}}</h4>
                         <small>
                         @forelse($project->technologies as $technology)
                             <span class="badge rounded-pill" style="background-color: {{$technology->colore}}">{{$technology->nome}}</span>
@@ -19,7 +19,7 @@
                     </div>
                     <small class="card-title">{{$project->cliente}}</small>
                 </div>
-                <p class="card-text">{{$project->riassunto}}</p>
+                <p class="card-text mt-2">{{$project->riassunto}}</p>
             </div>
         </div>
         <div class="d-flex justify-content-end">
