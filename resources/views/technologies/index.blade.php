@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="container mt-5">
+        <a href="{{route('technologies.create')}}">
+            <button class="btn btn-outline-primary my-3"><i class="bi bi-plus-lg"></i></button>
+        </a>
         <div class="row row-cols-4 g-3">
             @foreach ($technologies as $technology)
                 <div class="col">

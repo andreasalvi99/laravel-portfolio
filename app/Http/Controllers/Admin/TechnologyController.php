@@ -23,15 +23,25 @@ class TechnologyController extends Controller
      */
     public function create()
     {
-        //
+        return view('technologies.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Technology $technology)
     {
-        //
+        $data = $request->all();
+
+        $newTechnology = new Technology();
+
+        $newTechnology->nome = $data['nome'];
+        $newTechnology->descrizione = $data['descrizione'];
+        $newTechnology->colore = $data['colore'];
+
+        $newTechnology->save();
+
+        return redirect()->route('technologies.index', $technology->id);
     }
 
     /**
