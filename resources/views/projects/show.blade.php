@@ -14,7 +14,6 @@
                         @forelse($project->technologies as $technology)
                             <span class="badge rounded-pill" style="background-color: {{$technology->colore}}">{{$technology->nome}}</span>
                         @empty
-                        -
                         @endforelse
                         </small>
                     </div>
